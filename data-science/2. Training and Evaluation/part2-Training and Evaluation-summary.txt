@@ -1,0 +1,27 @@
+Summary of Results from Training and Evaluating Models
+
+1. Ridge Regression Model:
+Low accuracy: Comparing from Lasso, it was better in accuracy, but only by slightly with .2% increase in accuracy. Still quite low at 27.9%.
+
+Parameter Adjusting: Made adjustments to the parameters of the model like Lasso. Though similar results were attained like Lasso, where the accuracy fell slightly below from the initial training.
+
+Prediction by per-day, rather than per-sale: I was curious how the Ridge model, the best model I had would compare if instead of predicting indepedent sales, I were to sum up it's sales prediction by the date. Then comparing these new prediction results to the ARIMA model's prediction. I was quite surprised how you could see the resemblance to the actual day-by-day sales.
+
+
+2. ARIMA Model:
+Forecast Accuracy: The model provided somewhat average forecasts of sales data. It captures the rough overall mean of the sales overtime, but is overall not helpful in finding out the potential forecast sales, if you're only ever looking at a rough straight line of where the mean distribution of all sales are.
+
+Residual Analysis: There are quite a bit of skewing in the data, deviating from distributions that indicate the model being accurate with the sales data. The models found pretty much all the patterns/correlation it could, but there is too much variation in the sales for the model to train on. Q-Q plot also describes more potential outliers as well.
+
+
+3. Key Findings:
+ARIMA: Was good at capturing the general trends of data, but struggled with the strong variations/fluctuations in values, exhibited by the residual error graphs.
+
+Ridge Regression: Was ok at predicting the independent sales with the information it had, but once it was sum up by day-by-day, it's predictive accuracy went high from 27.9%, to 71.8%.
+
+
+My Thoughts: I have some ideas why Ridge outperformed ARIMA. ARIMA only had one data column to work off of, which is 'Order Date'. While Ridge has many more, including the date column. Which had been adjusted to be able to work with the model. Ridge had much more data to work with, training on individual sales. Contrasting ARIMA, which trained by dates.
+
+This may explain why ARIMA didn't do as well as Ridge. Furthermore, when we summed up all sales by the day, Ridge became more accurately, likely because the underestimation is balancing out with the overestimation. This was quite similar when summing ARIMA by the overall sales.
+
+ARIMA might be more accurate with weekly or monthly sales, as the sales pattern become more apparent, and the outliers balance each other out from aggregation and summing.
