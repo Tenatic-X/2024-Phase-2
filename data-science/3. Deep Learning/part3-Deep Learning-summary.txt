@@ -1,0 +1,28 @@
+Findings:
+I realized how the time it takes to train a model can really add up, especially when you need to tinker and make changes to the layers, and see whether they improve the model or not. So it's really important to consider the speed it trains, compared to its accuracy. From the results the model has outputted, it seems to struggle with animals a bit more, over inanimate objects. This is a little more evident between the confusion of cats and dogs.
+
+
+Steps:
+1. Data Preprocessing: Loaded in Cifar-10 dataset, split the data into train, validation, test sets. Normalized and augmented images, to help with model training
+
+2. Model Selection: Researched different models, settled with ResNet50, and looked at ResNet50 model examples, with the different model layers as well
+
+3. Model Optimizing: Added 'Adam' optimizer, and also implemented pre-weighted ResNet50 model to speed up training accuracy
+
+4. Model Tweaking: Trained several models sequentially, to try and learn what hyperparameters work, and what don't from the previous model
+
+5. Evaluation: Best model is evaluated by visualizing it in graphs, to find what interesting patterns and points are when the model is tested on with variable dataset
+
+
+Possible next steps:
+Separate Models: Could try training a separate model that focuses on animals only, and the other on inanimate objects. That way they can focus on the features that discern between these groups.
+
+More Animal Images: More images on animals as the model had trouble predicting the categories, over inanimate objects. This is more so for cats and dogs.
+
+Multiple Models: Could try combining multiple models together and see if it improves accuracy.
+
+Regularization Techniques: These are things like 'Droupout', which through my trials and errors, didn't work as well. But could try experimenting other ones like batch normalization or weight decay. Maybe dropout works better with more convolutional layers, as opposed to one or two.
+
+Hyperparameter Tuning: There is definitely more room to play hyperparameters, as there are so many different choices and methods when it comes to layering the model tuning layers.
+
+More Augmentation: Could try other augmentation techniques other than shifting and flipping horizontally. Such as adverserial training, making imperceptible changes to the images, whilst being significant enough to confuse the model.
