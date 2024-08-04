@@ -1,0 +1,27 @@
+Steps taken to perform EDA
+1. Data Loading/Understanding: Importing all nessecary libraries, loading data into a dataframe, and understanding the columns/numeric variables
+
+2. Data Visualization: Visualize the numeric data from the dataset into graphs, to find any interesting results and patterns
+
+3. Data Aggregation: Using the date feature, we cluster them by month, and aggregate the sales by the month, to then visualize as graphs to find patterns/trends
+
+4. Data Cleaning: Removing unnesecary columns to data analysis, checking missing values and simplifying the Order ID to make things more readible/manageable
+
+5. Data Filtering: Removing data that seem to be outliers in the dataset, to ensure better accuracy in data analysis
+
+6. One-hot Encoding: Applied One-hot encoding on certain columns, that could be used for further data analysis/pattern finding
+
+7. Correlation Analysis: Analyzing the correlation of numeric columns, to the 'Profit' column
+
+8. Feature Engineering: Forming a new column/feature, based on difference of 'Order Date' and 'Ship Date' for data analysis 
+
+
+
+Interesting findings during EDA and Preprocessing
+1. Low Profit Levels: Find it a little strange how unusually low the mean profits are for each sale, especially if its a business that expects to turn a profit. Makes me question if its a non-profit store, or second hand shop?
+
+2. Sales Trends: Visualized the monthly total sales with a bit of data aggregation, and it displays high increases during the end of the year, when holidays typically occur
+
+3. Correlation of Profit and Discount: There is a negative correlation between discount and profit, indicating that higher discounts are typically associated with lower profits, which is understandable on the basis of how business works, as discounts work on the benefit of the customer, not the business
+
+4. Shipping Time Analysis: After forming a new feature, I noticed that there is a difference in the time between 'Order Date', and 'Ship Date' depending on the shipping a customer chose. Same day shipping is fastest, because (as stated in the name,) the item is shipped typically on the same day as its ordered. With the slowest shipping mode being 'Standard Shipping'
